@@ -1,6 +1,6 @@
 // algorithm
 /*
-    1. start = 0, end = array.length - 1, mid = (start+end) / 2
+    1. start = 0, end = array.length, mid = (start+end) / 2
     2. Compare mid element with searchEle
     3. If equal then stop search
     4. Else check if searchEle is < mid ele if yes go to step 5 else go to step 6
