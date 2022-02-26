@@ -24,3 +24,6 @@ This repository contains data-structures and algorithms coding problems and solu
 # REFERENCES
 1. Array problem statements 
     - https://www.geeksforgeeks.org/top-50-array-coding-problems-for-interviews/
+2. Links
+   - https://devdojo.com/madzadev/21-github-repositories-to-become-a-javascript-master
+   - https://github.com/trekhleb/javascript-algorithms
