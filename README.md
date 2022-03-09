@@ -21,11 +21,11 @@ This repository contains data-structures and algorithms coding problems and solu
     - Quick Sort
     - Radix Sort
 
-# REFERENCES
+# References
 1. Array coding problems 
     - https://www.geeksforgeeks.org/top-50-array-coding-problems-for-interviews/
 2. String coding problems
     - https://dev.to/javinpaul/top-20-string-coding-problems-from-programming-job-interviews-493m
-3. Links
+3. Other Links
    - https://devdojo.com/madzadev/21-github-repositories-to-become-a-javascript-master
    - https://github.com/trekhleb/javascript-algorithms
