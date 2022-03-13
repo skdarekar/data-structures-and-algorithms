@@ -24,9 +24,30 @@ class LinkedList {
             this.head = newNode;
         }
     }
-
     // insertAt(element, location)
-    // removeFrom(location)
+    insertAt(element, location) {
+        if (this.sizeOfList() >= location - 1) {
+            let newNode = new Node(element);
+            let i = 1;
+            let prevNode = this.head;
+            let nextNode = this.head.next;
+            if (location === 1) {
+                newNode.next = prevNode;
+                this.head = newNode;
+                return;
+            }
+            while (i < location - 1 && nextNode) {
+                prevNode = nextNode;
+                nextNode = nextNode.next;
+                i++;
+            }
+            prevNode.next = newNode;
+            newNode.next = nextNode;
+        } else {
+            console.log("Invalid location to insert element");
+        }
+    }
+   
     // removeElement(element)
     removeElement(element) {
         if (!this.isEmpty()) {
@@ -58,7 +79,16 @@ class LinkedList {
         return this.head ? false : true;
     }
     // sizeOfList
-
+    sizeOfList() {
+        if (this.isEmpty()) return 0;
+        let tempHead = this.head;
+        let size = 0;
+        while (tempHead) {
+            size++;
+            tempHead = tempHead.next;
+        }
+        return size;
+    }
     // PrintList
     printList() {
         if (!this.isEmpty()) {
@@ -80,5 +110,9 @@ list.addElement(10);
 list.addElement(12);
 list.addElement(13);
 list.printList();
+
 list.removeElement(10);
+list.printList();
+console.log(list.sizeOfList())
+list.insertAt(111, 5);
 list.printList();
