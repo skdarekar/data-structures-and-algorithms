@@ -9,8 +9,7 @@ class LinkedList {
     constructor(head = null) {
         this.head = head;
     }
-    // functions to be implemented
-    // addElement(element)
+    // add new element to linkedList
     addElement(element) {
         let newNode = new Node(element);
         let currentHead;
@@ -24,7 +23,7 @@ class LinkedList {
             this.head = newNode;
         }
     }
-    // insertAt(element, location)
+    // insert new element to given location
     insertAt(element, location) {
         if (this.sizeOfList() >= location - 1) {
             let newNode = new Node(element);
@@ -48,7 +47,7 @@ class LinkedList {
         }
     }
    
-    // removeElement(element)
+    // remove element from linked list
     removeElement(element) {
         if (!this.isEmpty()) {
             // delete element from start
@@ -95,7 +94,6 @@ class LinkedList {
             let tempHead = this.head;
             while (tempHead) {
                 // console.log(` ${tempHead.element} `);
-
                 process.stdout.write(` ${tempHead.element} ${tempHead.next ? "->" : "\n"}`);
                 tempHead = tempHead.next;
             }
@@ -113,6 +111,6 @@ list.printList();
 
 list.removeElement(10);
 list.printList();
-console.log(list.sizeOfList())
+console.log(list.sizeOfList());
 list.insertAt(111, 5);
 list.printList();
