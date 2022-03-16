@@ -75,4 +75,4 @@ list.printList();
 
 list.reverseList();
 console.log("REVERSED LIST - ");
-list.printList()
+list.printList();
