@@ -28,6 +28,10 @@ class LinkedList {
     printList() {
         // print linked list elements
         if (this.head) {
+            if (this.detectLoop()) {
+                console.log("Aborting... Linked list contains loop, printing will go into infinite loop.");
+                return;
+            }
             let tempHead = this.head;
             while (tempHead) {
                 process.stdout.write(`${tempHead.element} ${tempHead.next ? "=> " : ""}`);
@@ -59,7 +63,29 @@ class LinkedList {
     }
 
     detectLoop() {
-        // todo
+        // detect if linked list contains loop
+        if (this.head) {
+            let tempHead = this.head;
+            let loopDetected = false;
+            while (tempHead) {
+                if (!tempHead.visited) {
+                    tempHead.visited = true;
+                    tempHead = tempHead.next;
+                } else {
+                    loopDetected = true;
+                    break;
+                }
+            }
+            if (loopDetected) {
+                console.log("Linked list contains loop.");
+            } else {
+                console.log("Linked list does not contains loop.");
+            }
+            return loopDetected;
+        } else {
+            console.log("emtpy list, no loop!!");
+            return false;
+        }
     }
 }
 
@@ -69,4 +95,5 @@ list.addElement(11);
 list.addElement(12);
 list.printList();
 list.createLoop(1);
-// list.detectLoop();
+list.detectLoop();
+list.printList();
