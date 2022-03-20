@@ -24,8 +24,23 @@ class LinkedList {
         }
     }
 
-    findMiddle(){
-        // Todo - find middle element
+    findMiddle() {
+        // middle element
+        // using two pointer technique
+        if (!this.isEmpty()) {
+            let p1 = this.head;
+            let p2 = this.head;
+            while (p2.next) {
+                p1 = p1.next;
+                p2 = p2.next.next;
+                if (!p2) {
+                    break;
+                }
+            }
+            console.log("Middle Element:", p1.element);
+        } else {
+            console.log("Linked list is empty!");
+        }
     }
 
     // Helper methods
@@ -52,9 +67,7 @@ let list = new LinkedList(null);
 list.addElement(10);
 list.addElement(12);
 list.addElement(13);
+list.addElement(14);
+list.addElement(15);
 list.printList();
-
-list.removeElement(10);
-list.printList();
-list.insertAt(111, 5);
-list.printList();
+list.findMiddle();
