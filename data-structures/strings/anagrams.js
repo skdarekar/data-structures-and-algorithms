@@ -28,15 +28,20 @@ function checkAnagram(str1, str2) {
         console.log("Strings are not anagram.");
         return;
     }
-    for (let i = 0; i < keys1.length; i++) {;
+    let anagramFlag = true;
+    for (let i = 0; i < keys1.length; i++) {
         if (dict1[keys1[i]] == dict2[keys1[i]]) {
             continue;
         }
+        anagramFlag = false;
         console.log("Strings are not anagram.");
         break;
+    }
+    if(anagramFlag){
+        console.log("Strings are anagram.");
     }
     console.log("dict 1:", dict1);
     console.log("dict 2:", dict2);
 }
 
-checkAnagram("abcdf", "cabff");
+checkAnagram("triangle", "integral");
